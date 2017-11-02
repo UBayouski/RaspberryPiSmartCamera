@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=Oculus
+Exec=/home/pi/oculus/run_kiosk.sh
+X-GNOME-Autostart-enabled=true
