@@ -33,9 +33,10 @@
 
             #main-buttons {
                 bottom: 5%;
+				left: 50%;
                 position: absolute;
                 text-align: center;
-                width: 100%;
+                transform: translateX(-50%);
             }
 
             #preview_select, #timelapse_button {
@@ -48,12 +49,18 @@
                 top: 50%;
                 transform: translate(-50%, -50%);
             }
+			#image_overlay {
+				height: 100%;
+				position: absolute;
+				width: 100%;
+			}
         </style>
         <script src="js/script.js"></script>
     </head>
     <?php if ($show_streaming) { ?>
     <body onload="setTimeout('init(<?php echo " $mjpegmode, $video_fps, $divider" ?>);', 100);">
     <div id="preview_select"></div>
+	<div id="image_overlay"></div>
     <img id="mjpeg_dest" src="./loading.jpg">
     <div id="main-buttons">
         <input id="video_button" type="button" class="btn btn-primary">
