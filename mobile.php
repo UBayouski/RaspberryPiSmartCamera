@@ -32,10 +32,10 @@
 				-ms-user-select: none;
 			}
 
-            #mjpeg_dest {                
-		        height: 100%;
-		        width: 100%;
-		        object-fit: cover;
+            #mjpeg_dest {
+				height: 100%;
+				width: 100%;
+				object-fit: cover;
             }
 
             #preview_select, #timelapse_button {
@@ -48,7 +48,7 @@
                 top: 50%;
                 transform: translate(-50%, -50%);
             }
-
+			
 			#image_overlay {
 				height: 100%;
 				position: absolute;
@@ -57,12 +57,12 @@
 			}
 
             #main-buttons {
-                bottom: 5%;
-                position: absolute;
-                text-align: center;
+				bottom: 5%;
+				position: absolute;
+				text-align: center;
 				width: 100%;
             }
-
+			
 			#main-buttons input {
 				margin-top: 5px;
 			}
