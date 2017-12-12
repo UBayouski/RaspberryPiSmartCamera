@@ -24,19 +24,18 @@
                 margin: 0;
                 padding: 0;
             }
+			
+			div {
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-khtml-user-select: none;
+				-ms-user-select: none;
+			}
 
             #mjpeg_dest {                
 		        height: 100%;
 		        width: 100%;
 		        object-fit: cover;
-            }
-
-            #main-buttons {
-                bottom: 5%;
-				left: 50%;
-                position: absolute;
-                text-align: center;
-                transform: translateX(-50%);
             }
 
             #preview_select, #timelapse_button {
@@ -49,10 +48,23 @@
                 top: 50%;
                 transform: translate(-50%, -50%);
             }
+
 			#image_overlay {
 				height: 100%;
 				position: absolute;
+				top: 0;
 				width: 100%;
+			}
+
+            #main-buttons {
+                bottom: 5%;
+                position: absolute;
+                text-align: center;
+				width: 100%;
+            }
+
+			#main-buttons input {
+				margin-top: 5px;
 			}
         </style>
         <script src="js/script.js"></script>
@@ -60,16 +72,17 @@
     <?php if ($show_streaming) { ?>
     <body onload="setTimeout('init(<?php echo " $mjpegmode, $video_fps, $divider" ?>);', 100);">
     <div id="preview_select"></div>
-	<div id="image_overlay"></div>
     <img id="mjpeg_dest" src="./loading.jpg">
-    <div id="main-buttons">
-        <input id="video_button" type="button" class="btn btn-primary">
-        <input id="image_button" type="button" class="btn btn-primary">
-        <input id="timelapse_button" type="button" class="btn btn-primary">
-        <input id="md_button" type="button" class="btn btn-primary">
-        <input id="halt_button" type="button" class="btn btn-danger">
-        <input id="halt_streaming_button" type="button" class="btn btn-danger" value="stop streaming" onclick="window.location='/mobile.php';">
-    </div>
+	<div id="image_overlay">
+		<div id="main-buttons">
+			<input id="video_button" type="button" class="btn btn-primary">
+			<input id="image_button" type="button" class="btn btn-primary">
+			<input id="timelapse_button" type="button" class="btn btn-primary">
+			<input id="md_button" type="button" class="btn btn-primary">
+			<input id="halt_button" type="button" class="btn btn-danger">
+			<input id="halt_streaming_button" type="button" class="btn btn-danger" value="stop streaming" onclick="window.location='/mobile.php';">
+		</div>
+	</div>
     </body>
     <?php } else { ?>
     <body>
