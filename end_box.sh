@@ -1,3 +1,5 @@
 #!/bin/bash
+source="$(dirname $1)"
+file="$(basename $1)*"
 
-rclone -v move $1* remote:oculus --delete-after --include *.mp4 --include *.jpg &
+rclone -v move $source remote:oculus --include $file &
